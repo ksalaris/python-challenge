@@ -43,17 +43,6 @@ with open(csvpath, newline='') as csvfile:
             min_net = average_change[i]
             min_mo = data[i+1]
 
-
-
-#print answers
-print("Financial Analysis")
-print("-----------------------------------------------------")
-print(f"Total Months: {total_months}")
-print(f"Total Profit: {total_net}")
-print(f"Average Change: ${avg_change}")
-print(f"Greatest Increase in Profits: {max_mo[0]}, ${max_net}")
-print(f"Greatest Decrease in Profits: {min_mo[0]}, ${min_net}")
-
 file = open("output","w")
 file.write("Financial Analysis"+ '\n')
 file.write("-----------------------------------------------------"+ '\n')
@@ -64,3 +53,6 @@ file.write(f"Greatest Increase in Profits: {max_mo[0]}, ${max_net}"+ '\n')
 file.write(f"Greatest Decrease in Profits: {min_mo[0]}, ${min_net}"+ '\n')
 
 file.close()
+
+with open("output.txt","r") as textfile:
+    print(textfile.read())

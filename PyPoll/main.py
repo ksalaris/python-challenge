@@ -32,16 +32,6 @@ with open(csvpath, newline='') as csvfile:
         
     candidates_votes = dict(zip(candidates,all_votes))
     winner = max(candidates_votes.keys(),key=lambda v: candidates_votes[v]) 
-    
-print("Election Results")
-print("-------------------------")
-print(f"Total Votes: {total_votes}")
-print("-------------------------")
-for i in range(0,len(candidates),1):
-    print(f"{candidates[i]}: {percentages[i]}% ({all_votes[i]}) ")
-print("-------------------------")
-print(f"Winner: {winner}")
-print("-------------------------")
 
 file = open("output.txt","w")
 file.write("Election Results"+ '\n')
@@ -55,3 +45,6 @@ file.write(f"Winner: {winner}"+ '\n')
 file.write("-------------------------"+ '\n')
 
 file.close()
+
+with open("output.txt","r") as textfile:
+    print(textfile.read())
